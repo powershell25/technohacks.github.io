@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            /* Gradient background */
+            background: linear-gradient(to bottom, blue , green);
+            height: 100vh;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            /* Center content horizontally */
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .welcome {
+            /* Bounce animation */
+            animation: bounce 2s infinite;
+
+            /* Position at the top and center */
+            position: absolute;
+            top: 5%;
+
+            /* Replace welcome message with image */
+            background-image: url('https://scontent.fmnl33-6.fna.fbcdn.net/v/t39.30808-6/371952405_787842826674772_8045010068758860828_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=K4qiugUKVRgAX-5zqtf&_nc_ht=scontent.fmnl33-6.fna&oh=00_AfDVkKScxPYR03FOhmggsv37-E2PTTcP5pJFQEY8o5NIwA&oe=65E96CB5');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 200px;
+            width: 450px;
+        }
+
+        .brands {
+            /* Position closer to the welcome message */
+            position: absolute;
+            bottom: 50%;
+
+            /* Display brands in a row */
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .brands p {
+            /* Add white stroke */
+            text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome"></div>
+    <div class="brands">
+        <p>Vivo</p>
+        <p>Huawei</p>
+        <p>Samsung</p>
+        <p>iPhone</p>
+    </div>
+</body>
+</html>

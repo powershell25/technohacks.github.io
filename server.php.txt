@@ -1,0 +1,40 @@
+<?php
+// Your PHP code goes here
+
+// Example code: Displaying "Hello, World!"
+echo "Hello, World!";
+
+// Example code: Performing a calculation
+$a = 5;
+$b = 10;
+$sum = $a + $b;
+echo "The sum of $a and $b is: $sum";
+
+// Example code: Retrieving user input
+$name = $_GET['name'];
+echo "Hello, $name!";
+
+// Example code: Accessing a database
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "Name: " . $row["name"] . ", Email: " . $row["email"];
+    }
+} else {
+    echo "No users found.";
+}
+
+$conn->close();
+?>
